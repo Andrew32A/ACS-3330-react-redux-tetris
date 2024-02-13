@@ -20,6 +20,13 @@
   color: white;
 }
 
+/* Next Block */
+.next-block {
+  display: grid;
+  grid-template-columns: repeat(4, var(--tile-size));
+  align-self: flex-start;
+}
+
 :root {
   --bg-color: rgba(150, 150, 150, 1);
 
