@@ -1,18 +1,18 @@
 import React from "react";
 import GridSquare from "./GridSquare";
+import { useSelector } from "react-redux";
+import { shapes } from "../utils";
 
 // Draws the "next" block view showing the next block to drop
-export default function NextBlock(props) {
-  const block = [
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-  ];
+export default function NextBlock() {
+  const nextShape = useSelector((state) => state.nextShape);
+  const block = shapes[nextShape][0];
+
   // Map the block to the grid
   const grid = block.map((rowArray, row) => {
     return rowArray.map((square, col) => {
-      return <GridSquare key={`${row}${col}`} color={square} />;
+      const color = square ? nextShape : 0;
+      return <GridSquare key={`${row}${col}`} color={color} />;
     });
   });
 
