@@ -30,9 +30,40 @@ export default function Controls(props) {
   };
 
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isRunning || gameOver) return;
+
+      switch (e.key) {
+        case "ArrowLeft":
+        case "a":
+          dispatch(moveLeft());
+          break;
+        case "ArrowRight":
+        case "d":
+          dispatch(moveRight());
+          break;
+        case "ArrowDown":
+        case "s":
+          dispatch(moveDown());
+          break;
+        case "ArrowUp":
+        case "w":
+          dispatch(rotate());
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
     requestRef.current = requestAnimationFrame(update);
-    return () => cancelAnimationFrame(requestRef.current);
-  }, [isRunning]);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      cancelAnimationFrame(requestRef.current);
+    };
+  }, [isRunning, gameOver, dispatch, speed]);
 
   return (
     <div className="controls">
