@@ -1,38 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 * {
   box-sizing: border-box;
+  font-family: "Press Start 2P", "Arial", sans-serif;
 }
 
 :root {
-  --bg-color: rgba(150, 150, 150, 1);
+  --bg-color: #000000;
 
   /* Border Colors are all transparent colors. These will tint or shade the background color of the square. */
-  --border-left-color: rgba(255, 255, 255, 0.2);
-  --border-top-color: rgba(255, 255, 255, 0.33);
-  --border-right-color: rgba(0, 0, 0, 0.15);
-  --border-bottom-color: rgba(0, 0, 0, 0.5);
+  --border-left-color: rgba(255, 255, 255, 0.5);
+  --border-top-color: rgba(255, 255, 255, 0.7);
+  --border-right-color: rgba(0, 0, 0, 0.2);
+  --border-bottom-color: rgba(0, 0, 0, 0.7);
 
-  /* Square Colors: background colors for the squares.*/
-  --color-0: #eaeaea;
-  --color-1: #ff6600;
-  --color-2: #eec900;
-  --color-3: #0000ff;
-  --color-4: #cc00ff;
-  --color-5: #00ff00;
-  --color-6: #66ccff;
-  --color-7: #ff0000;
+  /* Square Colors: background colors for the squares. */
+  --color-0: #000000; /* Black for empty squares to match the background */
+  --color-1: #ff0000; /* Bright red */
+  --color-2: #ffd500; /* Bright yellow */
+  --color-3: #0000ff; /* Deep blue */
+  --color-4: #800080; /* Purple */
+  --color-5: #00ff00; /* Bright green */
+  --color-6: #00ffff; /* Cyan */
+  --color-7: #ff7f00; /* Orange */
 
   /* Button Colors */
-  --button-color-t: rgba(200, 200, 200, 1);
-  --button-color-r: rgba(150, 150, 150, 1);
-  --button-color-b: rgba(120, 120, 120, 1);
-  --button-color-l: rgba(222, 222, 222, 1);
+  --button-color-t: rgba(50, 50, 50, 0.9); /* Dark Grey Top */
+  --button-color-r: rgba(80, 80, 80, 0.9); /* Medium Grey Right */
+  --button-color-l: rgba(120, 120, 120, 0.9); /* Light Grey Left */
+  --button-color-b: rgba(255, 75, 0, 0.9); /* Bright Orange Bottom */
 
-  /* Numbers define values that will be used throughout the CSS.
-  --tile-size: 20px for example will set the size of the grid squares. */
   --cols: 10;
   --rows: 18;
-  --tile-size: 20px;
-  --border-width: 5px;
+  --tile-size: 30px;
+  --border-width: 2px;
+}
+
+body {
+  background-image: url("./images/bg.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* App */
@@ -75,7 +82,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(1px + 2vmin);
   color: white;
 }
 
@@ -93,9 +100,16 @@
 }
 
 .score-board-button {
+  width: 120px;
   display: block;
   padding: 1em;
-  border-width: 5px;
+  margin: 0.5em;
+  border-width: 2px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-radius: 2px;
   border-top-color: var(--button-color-t);
   border-left-color: var(--button-color-l);
   border-right-color: var(--button-color-r);
@@ -111,6 +125,8 @@
 
 /* Control Button */
 .control-button {
+  font-size: 0.2em;
+  margin: 0.5em;
   --size: calc(var(--tile-size) * 2.5);
   width: var(--size);
   height: var(--size);
@@ -121,6 +137,10 @@
   border-left-color: var(--button-color-l);
   border-right-color: var(--button-color-r);
   border-bottom-color: var(--button-color-b);
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 2px;
 }
 
 /* Message Popup Styles */
@@ -129,14 +149,29 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: calc(var(--tile-size) * 10);
-  height: calc(var(--tile-size) * 10);
-  background-color: rgba(255, 255, 255, 0.5);
+  width: calc(var(--tile-size) * 100);
+  height: calc(var(--tile-size) * 5);
+  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: blink 1.5s linear infinite;
 }
 
 .message-popup.hidden {
   display: none;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* Colors */
