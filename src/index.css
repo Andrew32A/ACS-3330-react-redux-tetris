@@ -9,10 +9,10 @@
   --bg-color: #000000;
 
   /* Border Colors are all transparent colors. These will tint or shade the background color of the square. */
-  --border-left-color: rgba(255, 255, 255, 0.5);
-  --border-top-color: rgba(255, 255, 255, 0.7);
-  --border-right-color: rgba(0, 0, 0, 0.2);
-  --border-bottom-color: rgba(0, 0, 0, 0.7);
+  --border-left-color: rgba(0, 0, 0, 0.5);
+  --border-top-color: rgba(0, 0, 0, 0.7);
+  --border-right-color: rgba(170, 170, 170, 0.2);
+  --border-bottom-color: rgba(92, 91, 91, 0.7);
 
   /* Square Colors: background colors for the squares. */
   --color-0: #000000; /* Black for empty squares to match the background */
@@ -28,7 +28,7 @@
   --button-color-t: rgba(50, 50, 50, 0.9); /* Dark Grey Top */
   --button-color-r: rgba(80, 80, 80, 0.9); /* Medium Grey Right */
   --button-color-l: rgba(120, 120, 120, 0.9); /* Light Grey Left */
-  --button-color-b: rgba(255, 75, 0, 0.9); /* Bright Orange Bottom */
+  --button-color-b: rgba(0, 132, 255, 0.9); /* Bright Orange Bottom */
 
   --cols: 10;
   --rows: 18;

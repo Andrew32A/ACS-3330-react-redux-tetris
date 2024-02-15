@@ -11,8 +11,9 @@ export default function NextBlock() {
   // Map the block to the grid
   const grid = block.map((rowArray, row) => {
     return rowArray.map((square, col) => {
-      const color = square ? nextShape : 0;
-      return <GridSquare key={`${row}${col}`} color={color} />;
+      return (
+        <GridSquare key={`${row}${col}`} color={square === 0 ? 0 : nextShape} />
+      );
     });
   });
 
