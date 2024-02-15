@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Andrew32A.github.io/ACS-3330-react-redux-tetris/static/css/main.6f6996ee.css",
+    "main.js": "/Andrew32A.github.io/ACS-3330-react-redux-tetris/static/js/main.cb04047a.js",
+    "static/media/bg.jpeg": "/Andrew32A.github.io/ACS-3330-react-redux-tetris/static/media/bg.edacad586784c41bffdb.jpeg",
+    "index.html": "/Andrew32A.github.io/ACS-3330-react-redux-tetris/index.html",
+    "main.6f6996ee.css.map": "/Andrew32A.github.io/ACS-3330-react-redux-tetris/static/css/main.6f6996ee.css.map",
+    "main.cb04047a.js.map": "/Andrew32A.github.io/ACS-3330-react-redux-tetris/static/js/main.cb04047a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f6996ee.css",
+    "static/js/main.cb04047a.js"
+  ]
+}
